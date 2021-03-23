@@ -5,6 +5,7 @@ import RegisterPage from './component/view/RegisterPage/RegisterPage';
 import './App.css';
 import Auth from './HOC/auth';
 import Navbar from './component/view/Navbar/Navbar';
+import UploadPage from './component/view/UploadPage/UploadPage';
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
           <Route exact path='/' component={Auth(LandingPage, null)} />
           <Route exact path='/login' component={Auth(LoginPage, false)} />
           <Route exact path='/register' component={Auth(RegisterPage, false)} />
+          <Route
+            exact
+            path='/product/upload'
+            component={Auth(UploadPage, true)}
+          />
         </Switch>
       </div>
     </Suspense>
