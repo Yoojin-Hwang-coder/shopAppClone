@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { REGISTER_USER, LOGIN_USER, AUTH_USER } from '../_actions/types';
+import {
+  REGISTER_USER,
+  LOGIN_USER,
+  AUTH_USER,
+  ADD_TO_CART,
+} from '../_actions/types';
 
 export function loginUser(dataToSubmit) {
   const request = axios
@@ -30,6 +35,21 @@ export function auth() {
 
   return {
     type: AUTH_USER,
+    payload: request,
+  };
+}
+
+export function addToCart(id) {
+  let body = {
+    productId: id,
+  };
+
+  const request = axios
+    .post('/api/users/addToCart', body)
+    .then((response) => response.data);
+
+  return {
+    type: ADD_TO_CART,
     payload: request,
   };
 }

@@ -6,6 +6,7 @@ import './App.css';
 import Auth from './HOC/auth';
 import Navbar from './component/view/Navbar/Navbar';
 import UploadPage from './component/view/UploadPage/UploadPage';
+import DetailProductPage from './component/view/DetailProductPage/DetailProductPage';
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
             exact
             path='/product/upload'
             component={Auth(UploadPage, true)}
+          />
+          <Route
+            exact
+            path='/product/:productId'
+            component={Auth(DetailProductPage, true)}
           />
         </Switch>
       </div>
