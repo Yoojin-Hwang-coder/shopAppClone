@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
 import { withRouter } from 'react-router-dom';
-import axios from 'axios';
+
 function LoginPage(props) {
   const dispatch = useDispatch();
 
@@ -13,9 +13,7 @@ function LoginPage(props) {
     setEmail(event.target.value);
   };
 
-  const onPasswordHandler = (event) => {
-    setPassword(event.target.value);
-  };
+  const onPasswordHandler = (event) => {};
 
   const onSubmitHandler = (event) => {
     event.preventDefault();

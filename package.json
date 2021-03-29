@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ant-design/icons": "^4.6.2",
     "antd": "^4.13.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",

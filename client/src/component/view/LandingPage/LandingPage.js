@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import { Col, Card, Row, Carousel } from 'antd';
+import { Col, Card, Row } from 'antd';
 import Meta from 'antd/lib/card/Meta';
 import ImageSlider from '../../utils/ImageSlider';
 import CheckBox from './Sections/CheckBox';

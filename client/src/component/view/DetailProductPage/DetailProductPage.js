@@ -6,6 +6,7 @@ import ProductImage from './Sections/ProductImage';
 import ProductInfo from './Sections/ProductInfo';
 
 function DetailProductPage(props) {
+  console.log(props);
   const product_id = props.match.params.productId;
   const [Product, setProduct] = useState({});
 
@@ -13,12 +14,9 @@ function DetailProductPage(props) {
     axios
       .get(`/api/product/product_by_id?id=${product_id}&type=single`)
       .then((response) => {
-        if (response.data.success) {
-          setProduct(response.data.product[0]);
-        } else {
-          alert('상세보기를 실패했습니다.');
-        }
-      });
+        setProduct(response.data[0]);
+      })
+      .catch((err) => alert(err));
   }, []);
 
   return (

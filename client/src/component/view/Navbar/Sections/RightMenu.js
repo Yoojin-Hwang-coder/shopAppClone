@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu } from 'antd';
+import { Menu, Badge } from 'antd';
+import { ShoppingCartOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -33,8 +34,18 @@ function RightMenu(props) {
   } else {
     return (
       <Menu mode={props.mode}>
-        <Menu.Item key='app'>
+        <Menu.Item key='upload'>
           <a href='/product/upload'>Upload</a>
+        </Menu.Item>
+        <Menu.Item
+          key='cart'
+          style={{ paddingRight: '-22px', marginRight: -5 }}
+        >
+          <Badge count={5} style={{ marginRight: '23px' }}>
+            <a href='/user/cart' className='head-example'>
+              <ShoppingCartOutlined style={{ fontSize: '30px' }} />
+            </a>
+          </Badge>
         </Menu.Item>
         <Menu.Item key='logout'>
           <a onClick={logoutHandler}>Logout</a>

@@ -7,6 +7,7 @@ import Auth from './HOC/auth';
 import Navbar from './component/view/Navbar/Navbar';
 import UploadPage from './component/view/UploadPage/UploadPage';
 import DetailProductPage from './component/view/DetailProductPage/DetailProductPage';
+import CartPage from './component/view/CartPage/CartPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             path='/product/:productId'
             component={Auth(DetailProductPage, true)}
           />
+          <Route exact path='/user/cart' component={Auth(CartPage, true)} />
         </Switch>
       </div>
     </Suspense>

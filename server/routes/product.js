@@ -87,14 +87,22 @@ router.post('/products', (req, res) => {
 
 router.get('/product_by_id', (req, res) => {
   let type = req.query.type;
-  let productId = req.query.id;
+  let productIds = req.query.id;
+
+  if (type === 'array') {
+    let ids = req.query.id.split(',');
+    productIds = ids.map((item) => {
+      return item;
+    });
+  }
 
   // 프로덕트 아이디를 이용해 같은 아이디의 상품을 가져온다
-  Product.find({ _id: productId })
+  Product.find({ _id: { $in: productIds } })
     .populate('writer')
     .exec((err, product) => {
       if (err) return res.status(400).send(err);
-      return res.status(200).json({ success: true, product });
+      return res.status(200).send(product);
     });
 });
+
 module.exports = router;
