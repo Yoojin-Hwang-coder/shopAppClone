@@ -8,6 +8,7 @@ import Navbar from './component/view/Navbar/Navbar';
 import UploadPage from './component/view/UploadPage/UploadPage';
 import DetailProductPage from './component/view/DetailProductPage/DetailProductPage';
 import CartPage from './component/view/CartPage/CartPage';
+import History from './component/view/History/History';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             component={Auth(DetailProductPage, true)}
           />
           <Route exact path='/user/cart' component={Auth(CartPage, true)} />
+          <Route exact path='/history' component={Auth(History, true)} />
         </Switch>
       </div>
     </Suspense>

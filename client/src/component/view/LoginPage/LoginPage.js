@@ -13,7 +13,9 @@ function LoginPage(props) {
     setEmail(event.target.value);
   };
 
-  const onPasswordHandler = (event) => {};
+  const onPasswordHandler = (event) => {
+    setPassword(event.target.value);
+  };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
